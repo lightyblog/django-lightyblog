@@ -3,9 +3,10 @@ django-lightyblog
 
 A django lightweight demo-app for running a minimalistic blog on google-app-engine
 
-A google-app-engine 
+Live demo
 ------------------------------------
-Live demo here: http://high-hue-532.appspot.com/
+
+Google App Engine: http://high-hue-532.appspot.com/
 
 Web goodies used:
 
