@@ -8,6 +8,8 @@ Live demo
 
 Google App Engine: http://high-hue-532.appspot.com/
 
+Username: <b>admin</b> | Password: <b>p.ota.to</b>
+
 Web goodies used:
 
 <a href="http://getbootstrap.com/">Bootstrap 3.0 » templates</a>
