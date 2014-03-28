@@ -1,0 +1,1 @@
+from lightyblog.settings import *

@@ -1,0 +1,41 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block head %}{% endblock %}
+
+{% block adminIndex %}
+    <h2 class="dark-grey">
+        <img src="/static/img/face.png" alt=""/>
+        Lightyblog &#187 <span class="magenta">{% trans 'My articles' %}</span>
+    </h2>
+    
+    {% if posts %}
+        <table class="table"><tbody>
+            {% for post in posts %}
+            <tr>
+                <td class="center put-middle">
+                        {{post.created}}
+                </td>
+                <td class="put-middle title">
+                    <a href="{% url 'lightyblog.views.article' post.id %}">
+                        {{post.title}}
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'lightyblog.views.edit' post.id %}"  class="btn btn-primary btn-block">{% trans 'Edit' %}</a>
+                </td>
+                <td>
+                    <a href="{% url 'lightyblog.views.delete' post.id %}"  class="btn btn-danger btn-block">{% trans 'Delete' %}</a>
+                </td>
+            </tr>   
+            {% endfor %}
+        </tbody></table>
+    {% else %}
+        <hr/>
+        <p class="lead center blue">
+            {% trans 'You do not have any articles published!' %}
+            <br/><br/>
+            <img src="/static/img/yellow.png" alt=""/>
+        </p>
+    {% endif %}
+{% endblock %}

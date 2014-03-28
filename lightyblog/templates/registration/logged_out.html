@@ -1,0 +1,19 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block head %}
+<script type="text/javascript">setTimeout(function() {window.location = "/latest-article/";}, 3000);</script>
+{% endblock %}
+
+{% block loginIndex %}
+<div class="top100 container-narrow">
+
+    <div class="center">
+        <img src="/static/img/cyan.png" title="Logout" alt="Logout">
+        <h1 class="goodbye">{% trans 'Goodbye!' %}</h1>
+        <p class="lead">
+            {% trans 'Have a great day!' %}           
+        </p>
+    </div>
+</div>
+{% endblock %}

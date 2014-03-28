@@ -1,0 +1,64 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block themeTitle %}{% trans 'Published Articles' %}{% endblock %}
+{% block head %}{% endblock %}
+
+{% block coreIndex %}
+    <h2 class="dark-grey">
+        <img src="/static/img/green.png" title="Hi, I am giving you, system info!" alt="Hi, I am giving you, system info!"/>
+        Lightyblog &#187 <span class="blue">{% trans 'Published' %}</span>
+    </h2>
+    
+    <hr/>
+    <div class="row">
+
+        <div class="col-sm-8 blog-main">
+        {% if preview %}
+            {% for next in preview %}
+                <div class="blog-post">
+                    <h2 class="black blog-post-title">{{next.title}}</h2>
+                    <p class="blog-post-meta">
+                        {{next.created}} 
+                        &#187; {% trans 'posted by' %}  
+                        <a href="{% url 'admin:index' %}auth/user/{{owner.id}}" class="light-red">{{next.owner.username}}</a>
+                    </p>
+                    <p>{{next.message}}</p>
+                </div>            
+                <hr/>
+            {% endfor %}
+        {% else %}
+            <p class="lead center dark-grey">Sorry no articles yet!</p>
+        {% endif %}
+        </div>
+ 
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+            <div class="sidebar-module sidebar-module-inset">
+                <div class="sidebar-module">
+                    <h4>{% trans 'Recent' %}</h4>
+                    {% if articles %}
+                        <ol class="list-unstyled">
+                        {% for article in articles %}
+                        <li><a href="{% url 'lightyblog.views.article' article.id %}">{{article.title}}</a></li>
+                        {% endfor %}
+                        </ol>
+                    {% else %}
+                        {% trans 'No articles at the moment.' %}
+                    {% endif %}
+                </div>
+   
+                <hr/>
+
+                <div class="sidebar-module">
+                    <h4>{% trans 'Links' %}</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://github.com/lightyblog/django-lightyblog">django-lightyblog &#187; GitHub</a></li>
+                        <li><a href="http://getbootstrap.com/">Bootstrap 3.0</a></li>
+                        <li><a href="http://jmpressjs.github.io/jmpress.js/">jmpress</a></li>
+                        <li><a href="http://django-nonrel.org/">django-norel</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

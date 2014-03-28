@@ -1,0 +1,30 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block head %}
+    {% if success %}
+        <script type="text/javascript">setTimeout(function() {window.location = "{% url 'admin:index'%}list-article/";}, 3000);</script>   
+    {% endif %}
+{% endblock %}
+
+
+{% block adminIndex %}
+    <h2 class="dark-grey">
+        <img src="/static/img/face.png" alt=""/>
+        Lightyblog &#187 
+        <span class="magenta">{{post.title}}</span>
+        &#187 
+        <span class="light-red">{% trans 'Deleted' %}</span> 
+    </h2>
+    
+    <hr/>
+ 
+    {% if success %}
+        <div class="alert alert-danger center">
+            <img src="/static/img/yellow.png" alt=""/>
+            <br/><br/>
+            {% trans 'The article was deleted successfully!' %}
+        </div>
+    {% endif %}
+   
+{% endblock %}

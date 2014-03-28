@@ -1,0 +1,26 @@
+{% extends 'theme.html' %}
+{% load i18n %}
+
+{% block themeTitle %}{% trans 'Login' %}{% endblock %}
+{% block head %}
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
+{% endblock %}
+
+{% block loginIndex %}
+
+    <form class="form-signin" role="form" action="{% url 'django.contrib.auth.views.login' %}" method="post">{% csrf_token %}
+        {% if form.errors %}
+            <p id="errors" class="light-red">
+                {% trans 'Login failed, please try again!' %}
+            </p>
+        {% endif %}
+
+        <h2 class="form-signin-heading">Lightyblog &#187; {% trans 'Login' %}</h2><br/>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required autofocus><br/>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required><br/>
+
+        <button class="btn btn-lg btn-danger btn-block" type="submit">{% trans 'Enter adminpanel' %}</button>
+
+    </form>
+{% endblock %}

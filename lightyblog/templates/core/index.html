@@ -1,0 +1,63 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block head %}
+<script type="text/javascript" src="/static/js/jmpress.all.min.js"></script>
+<script type="text/javascript">$(function(){$('#impress').jmpress();});</script>
+{% endblock %}
+
+
+{% block presentationIndex %}
+<div id="impress">
+    <div id="the-assignment" class="step" data-x="0" data-y="1000">
+        <img src="/static/img/red.png" title="Presentation" alt="Presentation">
+        <h1 class="light-red">{% trans 'The assignment' %}</h1><hr/>
+        <p>
+            {% trans 'Develop a lightweight blogging tool. Creating, editing, deletion of articles, using Django on App Engine. We would like to see your abilities across the whole range of the server / client-side stack.' %} 
+            {% trans 'Please build the functionality from scratch, rather than using Django admin. Finally, deploy your blog on appstop.com upload your code on github, so that we can poke around.' %}
+        </p>
+    </div>
+
+    <div id="the-approach" class="step" data-x="2500" data-y="1000">
+        <img src="/static/img/purple.png" title="Presentation" alt="Presentation">
+        <h1 class="light-red">{% trans 'The approach' %}</h1><hr/>
+        <p>
+        {% trans 'Due to limited time, I sticked on a basic approach.' %} 
+        </p>
+        <span class="green">{% trans 'With a standard css interface and some nice icons.' %}</span> 
+        </p>
+    </div>
+
+    <div id="web-goodies" class="step" data-x="5000" data-y="-3500">
+        <img src="/static/img/blue.png" title="Presentation" alt="Presentation">
+        <h1 class="light-red">{% trans 'Web goodies' %}</h1><hr/>
+        <ol class="lead">
+            <li><a href="https://github.com/lightyblog/django-lightyblog">django-lightyblog &#187; GitHub</a></li>
+            <li><a href="http://getbootstrap.com/">bootstrap 3.0</a>  &#187; templates</li>
+            <li><a href="http://jmpressjs.github.io/jmpress.js/">jmpress</a> &#187; presentation</li>
+            <li><a href="http://django-nonrel.org/">django-norel</a> &#187; collections of packages</li>
+        </ol> 
+    </div>
+
+    <div id="future-work" class="step" data-x="-2500" data-y="-3500">
+        <img src="/static/img/green.png" title="Presentation" alt="Presentation">
+        <h1 class="light-red">{% trans 'Future work (todos)' %}</h1>
+        <p>
+            {% trans 'There are several things that could be improved. Just a few I had in mind but did not bother to implement. As I preferred to keep it simple. ;)' %} 
+        </p>
+        <ul class="lead">
+            <li><span class="black">Search & Tags</span></li>
+            <li><span class="black">Comments &amp; Categories</span></li>
+            <li><span class="black">&nbsp;...&nbsp;</span></li>
+        </ul> 
+    </div>
+
+    <div id="the-author" class="step" data-x="10000" data-y="-3500">
+        <img src="/static/img/smoke.png" title="Presentation" alt="Presentation">
+        <h1 class="light-red">{% trans 'The author' %}</h1><hr/>
+        <p class="lead">{% trans 'Codes from hardware (C/C++) &#187; &#187; up to  &#187; &#187; Web-Front-Back-End.' %}</p>
+        <p class="lead">{% trans 'Addicted to coffee. Develops on Vim...' %} 
+        <p class="lead">{% trans 'Enjoys traveling, music, sun, &amp; good food!' %}</p>
+    </div>
+</div>
+{% endblock %}

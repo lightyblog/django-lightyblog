@@ -1,0 +1,66 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block head %}
+    {% if success %}
+        <script type="text/javascript">setTimeout(function() {window.location = "{% url 'admin:index' %}edit-article/{{post.id}}/";}, 1500);</script>   
+    {% endif %}
+{% endblock %}
+
+{% block adminIndex %}
+    <h2 class="dark-grey">
+        <img src="/static/img/face.png" alt=""/>
+        Lightyblog &#187 
+        <span class="blue">{% trans 'Editing' %}</span>
+        &#187 
+        <span class="magenta">{{post.title}}</span>
+    </h2>
+    
+    {% if success %}
+        <div class="alert alert-success center">
+            {% trans 'The article was updated successfully!' %}
+        </div>
+    {% endif %}
+   
+    <hr/>
+
+    <form enctype="multipart/form-data" action="{% url 'admin:index' %}edit-article/{{post.id}}/" method="post">{% csrf_token %}
+        
+        <table class="create-table put-center"><tbody><tr>   
+            <td class="left"> 
+                {% if form.title.errors %}
+                    <div class="light-red" id="e_title">{{form.title.errors}}</div><hr/>
+                {% endif %}
+                <label for="id_title">{% trans 'Article title:'%}</label>
+                <p class="center">{{form.title}}</p>
+            </td>
+            <td class="center width50">
+                {% if form.is_approved.errors %}
+                    <div class="light-red" id="e_is_approved">{{form.is_approved.errors}}</div><hr/>
+                {% endif %}
+                <label class="label label-info font17" for="id_is_approved">
+                    {% trans 'Make it visible' %}
+                    &nbsp;&nbsp;
+                    <span class="put-bottom">{{form.is_approved}}</span>
+                </label>
+            </td>
+        </tr></tbody></table>
+        
+        <br/><br/>
+        
+        <table class="create-table put-center"><tbody><tr>   
+            <td class="left width100"> 
+                {% if form.message.errors %}
+                    <div class="light-red" id="e_message">{{form.message.errors}}</div><hr/>
+                {% endif %}
+                <label for="id_message">{% trans 'Article text:' %}</label>
+                <p class="center">{{form.message}}</p>
+            </td>
+        </tr></tbody></table>
+        
+        <br/><br/>
+
+        <p class="center"><input class="btn btn-lg btn-success" type="submit" value="{% trans 'Publish article' %}" name="submit"></p>
+
+    </form>
+{% endblock %}

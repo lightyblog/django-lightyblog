@@ -1,0 +1,13 @@
+{% extends "theme.html" %}
+{% load i18n %}
+
+{% block head %}{% endblock %}
+
+{% block coreIndex %}
+<p class="center lead">
+    <img src="/static/img/orange.png"/>
+    <br/>
+    <span class="light-red">{% trans 'Sorry, there was an error!' %}</span>
+</p>
+{% endblock %}
+
