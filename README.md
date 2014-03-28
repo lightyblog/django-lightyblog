@@ -7,6 +7,13 @@ A google-app-engine
 ------------------------------------
 Live demo here: http://high-hue-532.appspot.com/
 
-Repo contains the full project folder, at it was pushed on the appspot.com for the demo.
+Web goodies used:
 
-KUDOs: To all the people that created the web goodies used for this app.
+<a href="http://getbootstrap.com/">Bootstrap 3.0 » templates</a>
+<br/>
+<a href="http://jmpressjs.github.io/jmpress.js/">jmpress » presentation</a>
+<br/>
+<a href="http://django-nonrel.org/">django-norel » collections of packages</a>
+<br/>
+
+Repo contains the full project folder, at it was pushed on the appspot.com for the demo.
