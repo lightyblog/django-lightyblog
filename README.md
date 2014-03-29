@@ -16,7 +16,7 @@ Web goodies used:
 <br/>
 <a href="http://jmpressjs.github.io/jmpress.js/">jmpress » presentation</a>
 <br/>
-<a href="http://django-nonrel.org/">django-norel » collections of packages</a>
+<a href="http://django-nonrel.org/">django-norel » collection of packages</a>
 <br/>
 
 Repo contains the full project folder, at it was pushed on the appspot.com for the demo.
