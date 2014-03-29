@@ -20,3 +20,16 @@ Web goodies used:
 <br/>
 
 Repo contains the full project folder, at it was pushed on the appspot.com for the demo.
+
+Screenshots
+------------------------------------
+
+![Admin Listing Articles](https://github.com/lightyblog/django-lightyblog/blob/master/lightyblog/doc/screenshots/lightyblog-admin.png)
+
+![Bootstrap Login](https://github.com/lightyblog/django-lightyblog/blob/master/lightyblog/doc/screenshots/lightyblog-login.png)
+
+![Blog Published Articles](https://github.com/lightyblog/django-lightyblog/blob/master/lightyblog/doc/screenshots/lightyblog-articles.png)
+
+![Editing Articles](https://github.com/lightyblog/django-lightyblog/blob/master/lightyblog/doc/screenshots/lightyblog-editing.png)
+
+
