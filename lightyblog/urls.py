@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^admin/list-article/', 'lightyblog.views.list',),
     url(r'^admin/create-article/', 'lightyblog.views.create',),
     url(r'^admin/edit-article/(?P<articleid>\d+)/$', 'lightyblog.views.edit',),
-    url(r'^admin/delte-article/(?P<articleid>\d+)/$', 'lightyblog.views.delete',),
+    url(r'^admin/delete-article/(?P<articleid>\d+)/$', 'lightyblog.views.delete',),
 )
 
 #/////////////////////////////////////////////////////////////////
